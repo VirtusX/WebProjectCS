@@ -1,0 +1,58 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+<head>
+    <title>Update games</title>
+</head>
+<body>
+    <header>
+        <div align="left">
+            <a class="logo" href="../home">SiteTemplate</a>@if(TempData["error"] != null) {
+                <div class="right">Game wasn't been added! Please retry!</div>}
+        </div>
+    </header>
+    <div align="center" class="animated fadeInUpBig">
+        <form class="form add" method="post">
+            <table class="t">
+                <tr>
+                    <td>
+                        <label for="name">Enter name of the game: </label>
+                    </td>
+                    <td>
+                        <input value="@if(WebProjectCS.Controllers.GamesController.Game() != null) { @WebProjectCS.Controllers.GamesController.Game().game_name; } " required maxlength="45" id="name" type="text" name="game_name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="author">Enter author of the game: </label>
+                    </td>
+                    <td>
+                        <input required maxlength="45" id="author" type="text" name="game_authors">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="pic">Enter url of the game picture</label>
+                    </td>
+                    <td>
+                        <input maxlength="200" id="pic" type="text" name="game_pic">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="about">Describe game in few words</label>
+                    </td>
+                    <td>
+                        <textarea maxlength="500" cols="27" rows="4" id="about" name="game_about"></textarea>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <br>
+            <input type="submit" class="button small" value="Update">
+        </form>
+    </div>
+</body>
+</html>

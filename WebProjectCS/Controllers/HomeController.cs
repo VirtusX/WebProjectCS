@@ -6,19 +6,14 @@ using System.Web.Mvc;
 
 namespace WebProjectCS.Controllers {
     public class HomeController:Controller {
-        public ActionResult Index() {
+        private DBModelContext db = new DBModelContext();
+      public ActionResult Index() {
+            TempData.Remove("error");
             return View();
             }
-
-        public ActionResult About() {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-            }
-
-        public ActionResult Contact() {
-            ViewBag.Message = "Your contact page.";
-
+        [HttpPost]
+        public ActionResult Index(string exit) {
+            usersController.CUser = null;
             return View();
             }
         }

@@ -1,0 +1,63 @@
+﻿@model WebProjectCS.User
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+</head>
+<body>
+    <header>
+        <div align="left">
+            <a class="logo" href="../home">SiteTemplate</a>
+            @if(TempData["error"] != null) {
+                
+                <div class="right">Please, repeat registration</div>
+                }
+        </div>
+    </header>
+    <div class="animated fadeIn" align="center">
+        <form class="form reg" method="post" action="">
+            <br><br>
+            <table>
+                <tr>
+                    <td>
+                        Enter username:
+                    </td>
+                    <td>
+                        <label>
+                            <input minlength="4" maxlength="45" required type="text" name="user_name">
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Enter email:
+                    </td>
+                    <td>
+                        <label>
+                            <input maxlength="45" required type="email" name="user_email">
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Enter password:
+                    </td>
+                    <td>
+                        <label>
+                            <input minlength="6" maxlength="45" type="password" name="user_password">
+                        </label>
+                    </td>
+                </tr>
+            </table>
+            <br><br><br>
+            <input class="button small" required type="submit" value="Sign up">
+            <br><br>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html>
+<head>
+    <title>@WebProjectCS.Controllers.GamesController.Game().game_name</title>
+</head>
+<body>
+    <header>
+        <div align="left">
+            <a class="logo" href="../home">SiteTemplate</a>@if(TempData["error"] != null) {
+                <div class="right">>Game hasn't been updated! Please, retry!</div>}
+            else if(TempData["Message"] != null) {<div class="right"> Game successfully updated!</div>}
+        </div>
+    </header>
+    <div class="block2">
+        <img class="img2" src="@WebProjectCS.Controllers.GamesController.Game().game_pic">
+    </div>
+    <div class="block b1">
+        <table class="t">
+            <tr>
+                <td class="td">Name of the game: @WebProjectCS.Controllers.GamesController.Game().game_name</td>
+            </tr>
+            <tr>
+                <td class="td">Authors of the game: @WebProjectCS.Controllers.GamesController.Game().game_authors</td>
+            </tr>
+            <tr>
+                <td class="td">Couple words about game: @WebProjectCS.Controllers.GamesController.Game().game_about</td>
+            </tr>
+        </table>
+        <a class="edit right" href="../games/edit?edit=true&game=@WebProjectCS.Controllers.GamesController.Game().game_id">Edit game description</a>
+    </div>
+</body>
+</html>

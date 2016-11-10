@@ -1,0 +1,81 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html class="animated fadeIn">
+<head>
+    <title>Profile</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
+    <script src="~/Scripts/main.js"></script>
+    <script>
+        webshims.setOptions('forms-ext', {types: 'date'});
+        webshims.polyfill('forms forms-ext');
+        $.webshims.formcfg = {
+            en: {
+                dFormat: '-',
+                dateSigns: '-',
+                patterns: {
+                    d: "yy-mm-dd"
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <div align="left">
+            <a class="logo" href="../home">SiteTemplate</a>@if(TempData["error"] != null) {
+            <div class="right">Entered passwords are different! Please retry!</div>}
+            else if(TempData["Message"] != null) {<div class="right"> Profile successfully updated!</div>}
+        </div>
+    </header>
+    <div class="block">
+        <form class="f1" method="post">
+            <p class="first">
+                Enter password: <input minlength="6" maxlength="45" id="pass1" title="pass1" type="password"
+                                       name="user_password">
+            <p class="first">Enter e-mail: <input maxlength="45" title="mail" type="email" name="user_email">
+            <p class="first">Enter avatar url: <input maxlength="100" title="pic" type="url" name="user_pic">
+            <p class="first">Enter birthday: <br> <input title="birth" type="date" name="user_birthday">
+            <p>Enter location: <input maxlength="100" title="location" type="text" name="user_location">
+            <p>
+                Choose your favourite game:
+                <div class="container">
+                    @foreach(string game in WebProjectCS.Controllers.usersController.GamesList()){
+                        <input type="checkbox" name="g" value="@game" title="@game">@game<br>}
+                    <input type="checkbox" name="g" value="new game" title="newGame">Add new game
+                </div>
+            <p>
+                Write something about yourself: <textarea maxlength="300" rows="2" cols="39" title="about" name="user_about"></textarea>
+                <br>
+                <input id="update" title="Update profile" type="submit" value="Update">
+        </form>
+    </div>
+    <div class="block b1">
+        @if(WebProjectCS.Controllers.usersController.CUser.user_pic!=null) {
+        <img class="img" src="@WebProjectCS.Controllers.usersController.CUser.user_pic" alt="avatar">
+        }
+        <table>
+            @foreach(String e in WebProjectCS.Controllers.usersController.UserData()){
+            <tr>
+                <td class="td">@e</td>
+            </tr>
+            }
+            @if(WebProjectCS.Controllers.usersController.UserGames().Count > 0) {
+                <tr>
+                    <td class="td">
+                    Favourite game: @for(int i = 0; i < WebProjectCS.Controllers.usersController.UserGames().Count(); i++) {
+                        if(i != WebProjectCS.Controllers.usersController.UserGames().Count() - 1) {
+                        <a href="../games/index?game=@WebProjectCS.Controllers.usersController.UserGames()[i].game_id">@WebProjectCS.Controllers.usersController.UserGames()[i].game_name,</a>
+                            }
+                        else {
+                            <a href="../games/index?game=@WebProjectCS.Controllers.usersController.UserGames()[i].game_id">@WebProjectCS.Controllers.usersController.UserGames()[i].game_name</a>}
+                        }
+                </td>
+            </tr>}
+        </table>
+    </div>
+</body>
+</html>

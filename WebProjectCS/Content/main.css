@@ -1,0 +1,357 @@
+@font-face {
+    font-family: 'Zekton Rg';
+    src: url('../fonts/zekton rg.ttf');
+    font-weight: normal;
+    font-style: normal
+}
+@font-face {
+    font-family: 'Orbitron-Bold';
+    src: url('../fonts/Orbitron-Bold.ttf');
+    font-weight: normal;
+    font-style: normal
+}
+@font-face {
+    font-family: 'LondrinaShadow-Regular';
+    src: url('../fonts/LondrinaShadow-Regular.ttf');
+    font-weight: normal;
+    font-style: normal
+}
+
+body, header,footer {
+    font-family: "Zekton Rg", fantasy;
+    background: url("banner.jpg") no-repeat;
+    background-size: cover;
+    color: #ffffff;
+}
+.edit{
+    font-family: Zekton Rg, fantasy;
+    border-bottom: none;
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+body, header, .add input, .t,.b1 {
+    font-size: 16pt;
+}
+
+header {
+    font-size: 13pt;
+}
+
+.container, .b1, .td {
+    background: rgba(240, 240, 255, 0.2);
+    background-size: cover;
+}
+
+.img {
+    padding: 1px;
+}
+
+.img2 {
+    margin-left: 10%;
+    width: 60%;
+}
+
+.container {
+    width: 425px;
+    height: 100px;
+    overflow-y: scroll;
+}
+
+.block, .first, .pass2, .block2, .img {
+    float: left;
+    width: 40%;
+}
+
+.block2, .td {
+    width: 30%;
+}
+
+.first {
+    margin-top: 0;
+}
+
+.b1 {
+    outline: solid 1px darkslateblue;
+    width: 59%;
+    margin-top: 2%;
+    margin-right: 1%;
+    font-family: Orbitron-Bold, fantasy;
+}
+
+.f1 {
+    margin-left: 20px;
+}
+
+.right {
+    float: right;
+}
+
+.logo {
+    font-family: LondrinaShadow-Regular, fantasy;
+    text-shadow: 0 0 10px white;
+    padding: 6px;
+    border-bottom: none;
+    color: aquamarine;
+    font-size: x-large;
+}
+
+.clicked {
+    background: black;
+    font-size: 20px;
+}
+
+.img2, .form,.front {
+    margin-top: 5%;
+}
+.front{
+    font-family: Orbitron-Bold, fantasy;
+    font-size: 25pt;
+}
+.form {
+    border-radius: 3px;
+    width: 430px;
+    height: 360px;
+    background: url("pic02.jpg") no-repeat;
+    background-size: cover;
+
+}
+
+.reg {
+    width: 400px;
+    height: 410px;
+}
+
+.add {
+    width: 700px;
+    height: 500px;
+}
+
+table {
+    border-spacing: 15px;
+}
+
+.td {
+    outline: darkslateblue solid thin;
+    padding: 5%;
+}
+
+#update {
+    width: 73%;
+}
+
+.title {
+    transition: text-shadow 0.5s ease-in-out, color 0.5s ease-in-out;
+    text-shadow: 5px 5px 12px black, 1px 1px 0 white;
+}
+
+.title:hover {
+    transition: text-shadow 0.5s ease-in-out, color 0.5s ease-in-out;
+    text-shadow: 0 0 2px #fdfff0, 12px 11px 12px #050600;
+    color: black;
+}
+
+.wrong {
+    box-shadow: 0 0 0 2px red !important;
+}
+
+.ok {
+    box-shadow: 0 0 0 2px #00ff15 !important;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+input[type="url"],
+select,
+textarea {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    background: rgba(240, 240, 255, 0.3);
+    background-size: cover;
+    border: none;
+    border-radius: 0;
+    color: inherit;
+    display: block;
+    outline: 0;
+    padding: 0 1em;
+    font-family: "Zekton Rg", fantasy;
+    text-decoration: none;
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"]:invalid,
+input[type="password"]:invalid,
+input[type="email"]:invalid,
+input[type="date"]:invalid,
+input[type="url"]:invalid,
+select:invalid,
+textarea:invalid {
+    box-shadow: none;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+input[type="url"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #9bf1ff;
+    box-shadow: 0 0 0 2px #9bf1ff;
+}
+
+.select-wrapper {
+    text-decoration: none;
+    display: block;
+    position: relative;
+}
+
+.select-wrapper:before {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-weight: normal;
+    text-transform: none !important;
+}
+
+.select-wrapper:before {
+    color: rgba(240, 240, 255, 0.3);
+    content: '\f078';
+    display: block;
+    height: 2.75em;
+    line-height: 2.75em;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 2.75em;
+}
+
+.select-wrapper select::-ms-expand {
+    display: none;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+input[type="url"],
+select {
+    height: 3em;
+}
+
+textarea {
+    padding: 0.75em 1em;
+}
+
+input[type="submit"],
+input[type="button"],
+button,
+.button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -moz-transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+    -webkit-transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+    background: url("banner.jpg");
+    background-size: cover;
+    border: 0;
+    border-radius: 0;
+    box-shadow: inset 0 0 0 2px #ffffff;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: 600;
+    font-family: "Zekton Rg", serif;
+    height: 3.5em;
+    letter-spacing: 0.25em;
+    line-height: 3.5em;
+    padding: 0 1.75em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:active,
+input[type="button"]:hover,
+input[type="button"]:active,
+button:hover,
+button:active,
+.button:hover,
+.button:active {
+    box-shadow: inset 0 0 0 2px #9bf1ff;
+    color: #9bf1ff;
+    text-shadow: 0 0 1px white;
+}
+
+input[type="submit"]:active,
+input[type="button"]:active,
+button:active,
+.button:active {
+    background-color: rgba(155, 241, 255, 0.3);
+    background-size: cover;
+    box-shadow: inset 0 0 0 2px #53e3fb;
+    color: #53e3fb;
+}
+
+input[type="submit"].icon:before,
+input[type="button"].icon:before,
+button.icon:before,
+.button.icon:before {
+    margin-right: 0.5em;
+}
+
+input[type="submit"].small,
+input[type="button"].small,
+button.small,
+.button.small {
+    font-size: 0.6em;
+}
+
+input[type="submit"].disabled, input[type="submit"]:disabled,
+input[type="reset"].disabled,
+input[type="reset"]:disabled,
+input[type="button"].disabled,
+input[type="button"]:disabled,
+button.disabled,
+button:disabled,
+.button.disabled,
+.button:disabled {
+    -moz-pointer-events: none;
+    -webkit-pointer-events: none;
+    -ms-pointer-events: none;
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.25;
+}
+
+a {
+    -moz-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+    -webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+    -ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+    border-bottom: dashed 1px;
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    border-bottom-color: transparent;
+    color: #6fecff !important;
+    text-shadow: 0 0 1px white;
+}
+
+a:active {
+    color: #28c7fb !important;
+}
+

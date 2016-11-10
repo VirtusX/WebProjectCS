@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <header>
+        <div align="left">
+            <a class="logo" href="../home">SiteTemplate</a>
+            @if(TempData["error"] != null) {
+                <div class="right">User not found! Please retry!</div>
+                }
+        </div>
+    </header>
+    <div class="animated fadeIn" align="center">
+        <form method="get" action="" class="form">
+            <br><br>
+            <table>
+                <tr>
+                    <td>
+                        Enter login or e-mail:
+                    </td>
+                    <td>
+                        <label>
+                            <input maxlength="45" required name="user_name" type="text">
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Enter password:
+                    </td>
+                    <td>
+                        <label>
+                            <input maxlength="45" required name="user_password" type="password">
+                        </label>
+                    </td>
+                </tr>
+            </table>
+            <br><br><br>
+            <input class="button  small" type="submit" value="Sign in">
+            <br><br>
+        </form>
+    </div>
+</body>
+</html>
